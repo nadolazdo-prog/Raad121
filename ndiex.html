@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baghdad Store | المعرض الملكي للأجهزة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Reem+Kufi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f1d592;
+            --black: #000000;
+            --dark-grey: #0a0a0a;
+            --glow-effect: 0 0 25px rgba(212, 175, 55, 0.5);
+        }
+
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+
+        body {
+            background-color: var(--black);
+            color: var(--gold);
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            border: 15px solid var(--gold);
+            border-image: linear-gradient(to bottom, var(--gold), #554411, var(--gold)) 1;
+        }
+
+        /* زخرفة البداية */
+        .top-bar {
+            background: var(--gold);
+            color: #000;
+            text-align: center;
+            font-weight: 900;
+            padding: 10px;
+            letter-spacing: 5px;
+            font-size: 1.2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'), radial-gradient(circle, #1a1a1a 0%, #000 100%);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        header h1 {
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: 6rem;
+            margin: 0;
+            text-shadow: var(--glow-effect);
+            animation: glow-pulse 2s infinite alternate;
+        }
+
+        @keyframes glow-pulse {
+            from { text-shadow: 0 0 10px var(--gold); }
+            to { text-shadow: 0 0 30px var(--gold), 0 0 50px #fff; }
+        }
+
+        .container { max-width: 1400px; margin: auto; padding: 40px 20px; }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin: 80px 0 40px;
+            position: relative;
+            font-family: 'Reem Kufi', sans-serif;
+        }
+
+        .section-title::after {
+            content: "⚜️⚜️⚜️";
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        /* نظام الشبكة للمنتجات */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: var(--dark-grey);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            border-color: var(--gold);
+            box-shadow: var(--glow-effect);
+            transform: translateY(-15px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: inset 0 0 10px #000;
+        }
+
+        .product-card h3 { color: #fff; font-size: 1.8rem; margin: 15px 0; }
+
+        .price-box {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--gold);
+            background: rgba(212, 175, 55, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .specs { color: #888; font-size: 0.9rem; margin-bottom: 20px; min-height: 50px; }
+
+        /* قسم الخدمات */
+        .services-area {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .service-item {
+            background: linear-gradient(135deg, #111, #000);
+            border: 2px solid var(--gold);
+            padding: 40px;
+            text-align: center;
+            border-radius: 30px;
+        }
+
+        /* قسم التقييمات العملاق */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .rev-card {
+            background: #111;
+            padding: 20px;
+            border-right: 5px solid var(--gold);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .rev-name { color: #fff; display: block; margin-top: 15px; font-weight: bold; }
+
+        /* التواصل الاجتماعي */
+        .contact-footer {
+            background: var(--gold);
+            color: #000;
+            padding: 80px 20px;
+            text-align: center;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .social-link {
+            display: inline-block;
+            background: #000;
+            color: var(--gold);
+            padding: 20px 40px;
+            margin: 15px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 50px;
+        }
+
+        .social-link:hover { transform: scale(1.1); background: #333; }
+
+        footer { text-align: center; padding: 60px; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">⚜️ معرض بغداد الملكي للأجهزة - BAGHDAD STORE ⚜️</div>
+
+<header>
+    <h1>BAGHDAD</h1>
+    <p style="font-size: 1.5rem; color: #fff;">التميز في عالم الـ Apple و الـ Gaming PC</p>
+</header>
+
+<div class="container">
+
+    <h2 class="section-title">📱 أجهزة Apple iPhone</h2>
+    <div class="products-grid">
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/716fAVpfwTL._AC_SL1500_.jpg">
+            <h3>iPhone 16 Pro Max</h3>
+            <p class="specs">تيتانيم صحراوي - كاميرا احترافية - سعة 512GB</p>
+            <div class="price-box">2,150,000 د.ع</div>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/81SigAnN7iL._AC_SL1500_.jpg">
+            <h3>iPhone 15 Pro Max</h3>
+            <p class="specs">تيتانيم طبيعي - معالج A17 Pro</p>
+            <div class="price-box">1,680,000 د.ع</div>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61H7fW9XN4L._AC_SL1500_.jpg">
+            <h3>iPhone 14 Pro Max</h3>
+            <p class="specs">شاشة Always-on - كاميرا 48MP</p>
+            <div class="price-box">1,380,000 د.ع</div>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71ZpT6B99iL._AC_SL1500_.jpg">
+            <h3>iPhone 13 Pro Max</h3>
+            <p class="specs">بطارية تدوم طويلاً - 120Hz</p>
+            <div class="price-box">1,150,000 د.ع</div>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/718C99Z6xRL._AC_SL1500_.jpg">
+            <h3>Apple Watch Ultra 2</h3>
+            <p class="specs">لهواة المغامرة - هيكل تيتانيم</p>
+            <div class="price-box">1,120,000 د.ع</div>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71YdE55GZZL._AC_SL1500_.jpg">
+            <h3>Apple Watch S9</h3>
+            <p class="specs">أناقة وأداء رياضي متكامل</p>
+            <div class="price-box">650,000 د.ع</div>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/716fAVpfwTL._AC_SL1500_.jpg">
+            <h3>iPhone 16 Pro</h3>
+            <p class="specs">الحجم المثالي مع أداء الجيل الجديد</p>
+            <div class="price-box">1,850,000 د.ع</div>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/81SigAnN7iL._AC_SL1500_.jpg">
+            <h3>iPhone 15 Pro</h3>
+            <p class="specs">سعر مناسب مع تقنية التيتانيم</p>
+            <div class="price-box">1,450,000 د.ع</div>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71v2jVh6nIL._AC_SL1500_.jpg">
+            <h3>iPad Pro M4</h3>
+            <p class="specs">أقوى جهاز لوحي في العالم</p>
+            <div class="price-box">1,900,000 د.ع</div>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/81CgtwSII3L._AC_SL1500_.jpg">
+            <h3>AirPods Pro 2</h3>
+            <p class="specs">عزل ضجيج خارق - USB-C</p>
+            <div class="price-box">340,000 د.ع</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">🖥️ قسم الـ Gaming PC (وحوش الأداء)</h2>
+    <div class="products-grid">
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/819m306T9GL._AC_SL1500_.jpg">
+            <h3>Baghdad Beast V1</h3>
+            <p class="specs">RTX 4090 | Core i9-14900K | 64GB DDR5</p>
+            <div class="price-box">5,400,000 د.ع</div>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71pMvS6K58L._AC_SL1500_.jpg">
+            <h3>Ultra Gamer White</h3>
+            <p class="specs">RTX 4080 | Core i7-14700K | All White</p>
+            <div class="price-box">3,950,000 د.ع</div>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/819pZp2p9rL._AC_SL1500_.jpg">
+            <h3>Speed Master PC</h3>
+            <p class="specs">RTX 4070 Ti | Ryzen 9 | 32GB</p>
+            <div class="price-box">2,800,000 د.ع</div>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/819m306T9GL._AC_SL1500_.jpg">
+            <h3>Budget King V3</h3>
+            <p class="specs">RTX 4060 | i5-13th | 16GB RAM</p>
+            <div class="price-box">1,450,000 د.ع</div>
+        </div>
+        <div class="product-card"><img src="https://m.media-amazon.com/images/I/71pMvS6K58L._AC_SL1500_.jpg"><h3>Pro Workstation</h3><p class="specs">Work & Play Extreme</p><div class="price-box">4,200,000 د.ع</div></div>
+        <div class="product-card"><img src="https://m.media-amazon.com/images/I/819pZp2p9rL._AC_SL1500_.jpg"><h3>Streaming Gear</h3><p class="specs">Dual PC Setup Specs</p><div class="price-box">3,100,000 د.ع</div></div>
+        <div class="product-card"><img src="https://m.media-amazon.com/images/I/819m306T9GL._AC_SL1500_.jpg"><h3>Mini Gaming PC</h3><p class="specs">ITX Powerhouse</p><div class="price-box">2,100,000 د.ع</div></div>
+        <div class="product-card"><img src="https://m.media-amazon.com/images/I/71pMvS6K58L._AC_SL1500_.jpg"><h3>The Legend PC</h3><p class="specs">Custom Water Loop</p><div class="price-box">6,500,000 د.ع</div></div>
+        <div class="product-card"><img src="https://m.media-amazon.com/images/I/819pZp2p9rL._AC_SL1500_.jpg"><h3>Night Hunter</h3><p class="specs">RTX 3060 Budget</p><div class="price-box">1,250,000 د.ع</div></div>
+        <div class="product-card"><img src="https://m.media-amazon.com/images/I/819m306T9GL._AC_SL1500_.jpg"><h3>Classic Gamer</h3><p class="specs">i5-12th | GTX 1660</p><div class="price-box">950,000 د.ع</div></div>
+    </div>
+
+    <h2 class="section-title">💳 خدمات البطاقات والشحن</h2>
+    <div class="services-area">
+        <div class="service-item">
+            <h3 style="font-size: 2.5rem;">iTunes US</h3>
+            <p>شحن رصيد آيتونز أمريكي لكافة الفئات وبأفضل الأسعار</p>
+            <p>5$, 10$, 20$, 50$, 100$ متوفرة الآن</p>
+        </div>
+        <div class="service-item">
+            <h3 style="font-size: 2.5rem;">iCloud Service</h3>
+            <p>توسيع مساحة التخزين لجميع حسابات Apple</p>
+            <p>50GB - 200GB - 2TB اشتراكات سنوية وشهرية</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">🌟 ماذا يقول عملاؤنا؟</h2>
+    <div class="reviews-grid">
+        <div class="rev-card">"تعامل راقي جداً، اشتريت أيفون 16 والهدية كانت سماعة أصلية. أنصح بهم." <span class="rev-name">- أحمد العبيدي</span></div>
+        <div class="rev-card">"البي سي اللي جمعته عدهم طيارة، ترتيب ونظافة بالشغل مو طبيعية." <span class="rev-name">- حيدر الكرخي</span></div>
+        <div class="rev-card">"خدمة شحن الآيتونز سريعة، خلال دقائق وصلني الكود." <span class="rev-name">- مريم جاسم</span></div>
+        <div class="rev-card">"أفضل سعر ببغداد ومصداقية بالضمان." <span class="rev-name">- مصطفى ستار</span></div>
+        <div class="rev-card">"المطور أحمد رعد سوى موقع عالمي، يسهل علينا الاختيار." <span class="rev-name">- علي الفارس</span></div>
+        <div class="rev-card">"توصيل سريع جداً للمحافظات، استلمت طلبي خلال 24 ساعة." <span class="rev-name">- سيف الدين</span></div>
+        <div class="rev-card">"كلشي أصلي ومختوم، عاشت ايدكم يا وحوش." <span class="rev-name">- عمر البغدادي</span></div>
+        <div class="rev-card">"محل ثقة، صارلي سنتين أتعامل وياهم وماكو أي مشكلة." <span class="rev-name">- نور الهدى</span></div>
+        <div class="rev-card">"الأسعار دائماً متحدثة ومنطقية مقارنة بالسوق." <span class="rev-name">- كرار حيدر</span></div>
+        <div class="rev-card">"شغل احترافي وتغليف ممتاز للأجهزة." <span class="rev-name">- عباس فاضل</span></div>
+    </div>
+
+</div>
+
+<div class="contact-footer">
+    <h2>جاهز للطلب؟ تواصل معنا الآن</h2>
+    <a href="https://wa.me/9647713620656" class="social-link">📱 واتساب: 07713620656</a>
+    <a href="https://instagram.com/h5inr" class="social-link">📸 انستقرام: h5inr</a>
+</div>
+
+<footer>
+    <div style="font-size: 3rem;">⚜️</div>
+    <p>جميع الحقوق محفوظة - معرض بغداد للأجهزة والتقنية</p>
+    <p>تم التصميم والتطوير بواسطة المطور المبدع</p>
+    <h1 style="font-size: 2.5rem; color: var(--gold); margin: 0;">أحمد رعد جاسم</h1>
+</footer>
+
+</body>
+</html>
